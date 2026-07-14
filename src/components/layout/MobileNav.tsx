@@ -4,7 +4,10 @@ import { cn } from "@/utils/cn";
 
 export function MobileNav() {
   return (
-    <nav className="flex items-center justify-around border-t border-[var(--color-border)] bg-[var(--color-background)] py-2 sm:hidden">
+    <nav
+      aria-label="Primary"
+      className="flex items-center justify-around border-t border-[var(--color-border)] bg-[var(--color-background)] py-2 sm:hidden"
+    >
       {primaryNavItems.map((item) => (
         <NavLink
           key={item.path}

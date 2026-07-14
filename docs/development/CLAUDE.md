@@ -530,7 +530,7 @@ how technical debt accumulates silently.
    is expected to evolve — the goal is that it never falls out of sync
    with the actual codebase, because a stale CLAUDE.md is worse than no
    CLAUDE.md (it actively misleads the next session).
-   
+
 ## 21. Success Metrics
 
 The application succeeds when it helps users:
@@ -546,55 +546,6 @@ Every new feature should improve at least one of these outcomes.
 ## 22. Learning Journey
 
 Every topic should eventually support the complete learning cycle.
-
-Learn
-↓
-
-Understand
-↓
-
-Visualize
-
-↓
-
-Remember
-
-↓
-
-Practice
-
-↓
-
-Assess
-
-↓
-
-Revise
-
-↓
-
-Master
-
-
----
-
-## Success Metrics
-
-The application succeeds when it helps users:
-
-- Learn concepts faster.
-- Recall concepts longer.
-- Revise efficiently.
-- Practice regularly.
-- Pass the PMP examination.
-
-Every feature must improve at least one of these outcomes.
-
----
-
-## Learning Journey
-
-Every PMP topic should eventually support the complete learning cycle:
 
 Learn
 ↓
@@ -614,8 +565,6 @@ Master
 
 The application should optimize for knowledge retention, not information storage.
 
----
-
 ## 23. PMP Content Standards
 
 Every major PMP concept should eventually contain:
@@ -630,9 +579,6 @@ Every major PMP concept should eventually contain:
 - Related concepts
 
 Content should be structured, reusable, and machine-readable.
-
----
-
 
 ## 24. Visual Asset Standards
 
@@ -654,10 +600,7 @@ Memory Hooks:
 
 All visual assets should support recall and revision.
 
----
-
-
-## 25. Sprint Workflow
+## 25. Sprint Workflow (AI Collaboration Loop)
 
 Every development sprint follows:
 
@@ -679,9 +622,6 @@ Next Sprint
 
 No major feature should skip review.
 
----
-
-
 ## 26. Backlog Philosophy
 
 Ideas are unlimited.
@@ -696,8 +636,6 @@ A feature should only be implemented when it supports:
 - Future business value
 
 Interesting but non-essential ideas belong in the backlog.
-
----
 
 ## 27. AI Collaboration Roles
 
@@ -722,7 +660,6 @@ Jignesh:
 - Product Tester
 
 All decisions should optimize for the long-term success of PMP Knowledge OS.
-
 
 ---
 

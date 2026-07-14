@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { Button } from "@/components/ui";
+import { Button, Heading, Text } from "@/components/ui";
 
 export function NotFoundPage() {
   return (
     <div className="flex flex-col items-center gap-4 py-16 text-center">
-      <h1 className="text-3xl font-bold">404</h1>
-      <p className="text-[var(--color-foreground)]/70">This page doesn't exist yet.</p>
+      <Heading level="page" as="h1">
+        404
+      </Heading>
+      <Text variant="muted">This page doesn't exist yet.</Text>
       <NavLink to="/">
         <Button variant="secondary">Back to home</Button>
       </NavLink>

@@ -15,7 +15,7 @@ export function Header() {
           {siteConfig.name}
         </NavLink>
 
-        <nav className="hidden items-center gap-1 sm:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
           {primaryNavItems.map((item) => (
             <NavLink
               key={item.path}

@@ -181,6 +181,38 @@ explicit:
   component, consistent with `CLAUDE.md` §16 rule 4 (new UI primitives
   only when genuinely, provably reusable).
 
+### Implementation status (as of Sprint KS-004)
+
+The reusable primitive layer described throughout this document now
+exists in `src/components/ui/`:
+
+| Primitive | Purpose |
+|---|---|
+| `Heading`, `Text` | The typographic hierarchy from §4, as components rather than ad hoc Tailwind classes per page. |
+| `Button` | Primary/secondary/ghost variants (§6), now also `sm`/`md`/`lg` sizes and an `isLoading` state. |
+| `Card`, `CardTitle`, `CardDescription` | The one card shape (§6) — `CardTitle`/`CardDescription` now compose `Heading`/`Text` rather than duplicating text-styling classes. |
+| `Badge` | Unchanged — already content-agnostic. |
+| `Spinner`, `Skeleton`, `SkeletonCard` | The loading-state language: an atomic spinner (reused inside `Button`'s `isLoading`) and a generic pulsing placeholder, composed into a ready-made card-shaped skeleton for list pages. |
+| `EmptyState`, `ErrorState` | The other two canonical async states, paired with loading — content-agnostic title/description/action slots. |
+| `ProgressBar` | A generic linear indicator (value/max in, accessible `role="progressbar"` out). **Not yet consumed anywhere** — no real progress data exists until a future progress-tracking feature (`ARCHITECTURE.md` §6) supplies it; wiring it to fabricated data now would be introducing feature-specific UI ahead of the feature itself, which this sprint's scope explicitly excludes. |
+| `PageHeader` | Consolidates the page title + description block every page previously hand-rolled, enforcing the "page title" hierarchy level automatically. |
+| `VisuallyHidden` | Screen-reader-only text utility, backing the skip link and `Spinner`'s accessible label. |
+
+All four content list pages (Concepts/Flashcards/Scenarios/Exams) were
+refactored to consume `PageHeader`, `SkeletonCard`, `EmptyState`, and
+`ErrorState` in place of markup that had been duplicated near-identically
+four times — the third-occurrence threshold CLAUDE.md §17 rule 2 sets for
+extracting a shared pattern was clearly met (it had reached a fourth).
+
+**Deliberately not built this sprint:** a shared abstraction over
+`Header`'s and `MobileNav`'s nav-item rendering. Both duplicate a similar
+`primaryNavItems.map(...)` + active-state pattern, but only two
+occurrences exist, their visual output diverges meaningfully (desktop
+pills vs. mobile bottom labels), and CLAUDE.md §17 rule 2 reserves
+extraction for a proven-shared shape at the third occurrence — forcing an
+abstraction over two divergent cases now would likely produce the wrong
+one.
+
 ## 7. Accessibility Principles
 
 Restated from `CLAUDE.md` §14 and `PRODUCT_EXPERIENCE.md` §5 principle 5,
