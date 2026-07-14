@@ -1,6 +1,6 @@
 import type { ContentMetadata } from "@/types/content";
 
-type GlobModules<Raw> = Record<string, () => Promise<Raw>>;
+type GlobModules<Raw> = Record<string, () => Promise<Raw | Raw[]>>;
 
 /**
  * Builds a typed content service backed by JSON files. Each file may
